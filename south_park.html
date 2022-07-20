@@ -7,10 +7,35 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+            h1 {
+                width: 100%;
+                text-align: center;
+            }
+            form {
+                display: block;
+                width: 100%;
+                margin: 30px 0;
+                font-size: 24px;
+            }
+            #characters div {
+                width: 33%;
+            }
+            #characters {
+                display: flex;
+                flex-flow: wrap;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
             <h1>South Park</h1>
+            <form id="form">
+                <label for="imageurl">Image:</label><br>
+                <input type="text" name="imageurl" placeholder="image URL" />
+                <input type="submit" text="submit" />
+            </form>
+
             <div id="characters" class="characters">
                 <!--character images-->
                 <!--

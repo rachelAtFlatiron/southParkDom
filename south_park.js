@@ -33,8 +33,7 @@ class -> .characters
 id ->  #characters
 tag -> div
 */
-const charactersDiv = document.querySelector('div') //returns first matching element
-console.log(charactersDiv)
+const charactersDiv = document.querySelector('.characters') //returns first matching element
 /*
 
 */
@@ -44,7 +43,6 @@ console.log(charactersDiv)
 //I don't want to manually type these lines of code for each character's image
 //Put characters in a list instead and iterate through
 const characterList = [
-    /*
     kyle,
     cartman,
     kenny,
@@ -54,7 +52,6 @@ const characterList = [
     tolkein,
     amanda,
     charlotte,
-    */
     ike,
     mkay,
     pc,
@@ -69,35 +66,36 @@ const characterList = [
     lemmiwinks
 ]
 
-//adding a little styling to charactersDiv
-charactersDiv.style.display = "flex";
-charactersDiv.style.flexFlow = "wrap";
-
 //iterate over charactersList with forEach
 //index parameter is optional
 //forEach is being passed a callback method that REQUIRES a parameter representing current element
 characterList.forEach((character, index) => {
-    console.log(character);
+
+    //container div for numberNode and imageNode (so I can format better)
+    let containerNode = document.createElement('div');
 
     //number node using index
-    let numberNode = document.createElement('h1');
+    let numberNode = document.createElement('h2');
     numberNode.innerText = index;
-    charactersDiv.append(numberNode);
 
     //create image node
-    let newNode = document.createElement('img');
-    console.log('create new node', newNode)
+    let imageNode = document.createElement('img');
     //populate image src 
-    newNode.src = character
-    //update id with index -> DON'T. USE. NUMBERS. THIS IS ONLY FOR DEMONSTRATION
-    newNode.id = index;
+    imageNode.src = character
+    //update id with index -> DON'T. USE. NUMBERS. THIS IS ONLY FOR DEMONSTRATION. LETTERS. ONLY.
+    imageNode.id = index;
     //example of changing width in javascript
-    newNode.style.width = "128px";
-    console.log('added src', newNode)
-    //append image node to characters div 
-    charactersDiv.append(newNode);
-    console.log('appended character')
+    imageNode.style.width = "128px";
+
+    //do all the appending
+    containerNode.append(numberNode);
+    containerNode.append(imageNode)
+    charactersDiv.appendChild(containerNode);
+    
 })
+
+//add new character on form submit
+
     
 
 /*objects*/
