@@ -91,11 +91,13 @@ characterList.forEach((character, index) => {
     containerNode.append(numberNode);
     containerNode.append(imageNode)
     charactersDiv.appendChild(containerNode);
-    
 })
 
 //add new character on form submit
 
+
+//fetch version
+//https://spapi.dev/api/episodes/1
     
 
 /*objects*/
@@ -126,3 +128,5 @@ const nonHumans = {
     cat,
     lemmiwinks 
 }
+
+
