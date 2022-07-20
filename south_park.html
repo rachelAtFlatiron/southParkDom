@@ -30,9 +30,15 @@
     <body>
         <div class="container">
             <h1>South Park</h1>
+            <!--
+                form built in onsubmit event
+                by default onsubmit refreshes page
+                use event.preventDefault to prevent refresh
+            -->
             <form id="form">
                 <label for="imageurl">Image:</label><br>
-                <input type="text" name="imageurl" placeholder="image URL" />
+                <input type="text" id="imageText" name="imageurl" placeholder="image URL" />
+                <input type="text" name="name" placeholder="name" />
                 <input type="submit" text="submit" />
             </form>
 
@@ -50,3 +56,4 @@
         <script src="south_park.js" async defer></script>
     </body>
 </html>
+

@@ -95,6 +95,57 @@ characterList.forEach((character, index) => {
 
 //add new character on form submit
 
+//1. get form node and save as a constant
+const form = document.querySelector("#form");
+//event: string (defines event), callback function (code to run when event is triggered)
+//2. event listener on form submit 
+form.addEventListener('submit', function(e) {
+    //prevent default
+    e.preventDefault();
+    //get the text user submitted 
+    let newValue = e.target.imageText.value;
+    //make image node 
+    let newNode = document.createElement('img');
+    //set src to user submitted text 
+    newNode.src = newValue 
+    //append image node to charactersDiv
+    charactersDiv.appendChild(newNode);
+});
+
+let episodes = [];
+//fetch statement returns a promise
+fetch('https://spapi.dev/api/episodes')
+.then(res => res.json()) //translate response into readable json
+.then(data => {
+    episodes = data.data;
+    console.log('in fetch statement', episodes);
+    episodes.forEach((el, i) => {
+        let pic = el.thumbnail_url
+        let title = el.name; 
+        let titleNode = document.createElement('h3');
+        titleNode.innerText = title;
+        console.log(pic);
+        let epiNode = document.createElement('img')
+        epiNode.src = pic;
+        charactersDiv.append(epiNode);
+        charactersDiv.append(titleNode);
+    });
+})
+.catch(err => console.log(err)); //if anything fails print error
+
+//runs before promise gets fulfilled
+console.log('outside fetch statement episodes is', episodes);
+
+
+
+    
+
+
+
+
+
+
+
 
 //fetch version
 //https://spapi.dev/api/episodes/1
