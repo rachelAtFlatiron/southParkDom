@@ -43,40 +43,49 @@ form.addEventListener('submit', function(e) {
     charactersDiv.appendChild(newNode);
 });
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~FETCH STATEMENT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~FETCH STATEMENT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //initialize episodes variable with empty array...demonstrates fetch data is not accessible outside of fetch
 let episodes = [];
 //fetch statement returns a promise that takes its sweet time to evaluate while the rest of code in file runs
 //this is asynchronous code
 fetch('https://spapi.dev/api/episodes')
-.then(res => res.json()) //translate response into readable json
-.then(data => {
-    episodes = data.data;
-    //ONCE YOU'RE IN THE PROMISED LAND YOU CANNOT LEAVE
-    episodes.forEach((el) => {
-        
-        let pic = el.thumbnail_url
-        let title = el.name; 
+.then(res => { 
+    return res.json(); //translate response into readable json
+}) 
+.then(info => {  //waits for response to be translated...once translated do whatever you want
+    console.log(info); //used this so I knew to use info.data
+    episodes = info.data; //the data part is specific to API's structure
 
+    //YOUR INFO/DATA CAN'T LEAVE THE PROMISED LAND
+    //episodes data only exists in here so you iterate in here
+    episodes.forEach((el) => {
+        let pic = el.thumbnail_url;
+        let title = el.name; 
+        let season = el.season;
+        
         //creating nodes
         let container = document.createElement('div');
         let titleNode = document.createElement('h3');
         let epiNode = document.createElement('img') //node for episode thumbnail image
+        let seasonNode = document.createElement('h3');
 
         container.classList.add('episode-container')
         //populating nodes
         titleNode.innerText = title;
         epiNode.src = pic;
+        seasonNode.innerText = season; 
 
         //appending things
        container.append(titleNode);
+       container.append(seasonNode);
        container.append(epiNode);
        document.body.append(container); //container will now show up in browser
     });
 })
-.catch(err => console.log(err)); //if anything fails print error
+.catch(err => console.log(err)); //if anything fails print error, only a .then thing
 
 //runs before promise gets fulfilled, episodes remains empty
+//YOU LEFT THE PROMISED LAND - this is an example
 console.log('outside fetch statement episodes is', episodes);
 
 
@@ -144,18 +153,19 @@ const nonHumans = {
 //2. loop through keys array with forEach
 //3. access each value in object using current key with nonHumans[character]
     
-Object.keys(nonHumans).forEach((character, index) => {
+Object.keys(nonHumans).forEach((character, num) => {
 
     //container div for numberNode and imageNode (so I can format better)
     let containerNode = document.createElement('div');
 
     //character name node (stored in character)
     let numberNode = document.createElement('h2');
-    numberNode.innerText = character;
+    numberNode.innerText = `${num + 1}. ${character}`;
 
     //image node with current key's (the character variable) value
     let imageNode = document.createElement('img');
     imageNode.src = nonHumans[character] //populate image src, we need to evaluate character to current key
+    //nonHumans['kyle'], nonHumans['mickey'] -> nonHumans.mickey
 
     //update id with character's name (stored in character)
     imageNode.id = character;
