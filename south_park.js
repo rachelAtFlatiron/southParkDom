@@ -120,6 +120,7 @@ fetch('https://spapi.dev/api/episodes')
     episodes = data.data;
     console.log('in fetch statement', episodes);
     episodes.forEach((el, i) => {
+        let container = document.createElement('div');
         let pic = el.thumbnail_url
         let title = el.name; 
         let titleNode = document.createElement('h3');
