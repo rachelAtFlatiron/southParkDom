@@ -1,11 +1,7 @@
 //images assigned to variables where variable name is character name
-let cat = "https://static.wikia.nocookie.net/southpark/images/5/5b/Pets-kennys-cat.png/revision/latest?cb=20200906152210"
 let lemmiwinks = "https://static.wikia.nocookie.net/southpark/images/b/b8/Lemmiwinks_%282%29.png/revision/latest/scale-to-width-down/700?cb=20161218172346";
-let mcnuggets = "https://static.wikia.nocookie.net/southpark/images/6/6b/Non-human-boys-pets-mcnugget.png/revision/latest?cb=20170604094830"
 let mickey = "https://static.wikia.nocookie.net/southpark/images/d/d4/Mickey_Mouse.png/revision/latest?cb=20160912202212";
-let minister = "https://static.wikia.nocookie.net/southpark/images/e/eb/Minister-of-montreal.png/revision/latest?cb=20200801170340";
 let pc = "https://static.wikia.nocookie.net/southpark/images/4/44/PCprincipal1.png/revision/latest?cb=20211125042014";
-let duck = "https://static.wikia.nocookie.net/southpark/images/4/42/Jeffy.png/revision/latest?cb=20170323124911";
 let ike = "https://static.wikia.nocookie.net/southpark/images/a/af/Ike-current.png/revision/latest/scale-to-width-down/656?cb=20180521124521";
 let kyle = "https://static.wikia.nocookie.net/southpark/images/9/95/Kyle-broflovski.png/revision/latest?cb=20190411033301"
 let cartman = "https://upload.wikimedia.org/wikipedia/en/7/77/EricCartman.png"
@@ -15,10 +11,7 @@ let towlie = "https://static.wikia.nocookie.net/southpark/images/0/07/Towelie-0.
 let tolkein = "https://static.wikia.nocookie.net/southpark/images/d/d3/Token_Black2.png/revision/latest?cb=20211125042745";
 let butters = "https://static.wikia.nocookie.net/southpark/images/0/06/ButtersStotch.png/revision/latest?cb=20190411032405";
 let heidi = "https://static.wikia.nocookie.net/southpark/images/b/b8/HeidiTurnerHat.png/revision/latest/scale-to-width-down/699?cb=20211125042015";
-let amanda = "https://static.wikia.nocookie.net/southpark/images/e/ef/HarrisonAmanda.png/revision/latest?cb=20160405212638";
-let charlotte = "https://static.wikia.nocookie.net/southpark/images/0/04/Charlotte1.png/revision/latest?cb=20151101193609"
 let mkay = "https://static.wikia.nocookie.net/southpark/images/5/58/Mr_Mackey_New.png/revision/latest/scale-to-width-down/451?cb=20211125042917"
-let gopher = "https://static.wikia.nocookie.net/southpark/images/b/b0/Dramatic-look-gopher.png/revision/latest?cb=20170605100321"
 let chef = "https://static.wikia.nocookie.net/southpark/images/3/38/JeromeChef.png/revision/latest/scale-to-width-down/700?cb=20160402120214";
 
 
@@ -108,27 +101,7 @@ values need to be stored as appropriate data type
 
 //put characters in list, you can only access by index number
 const characterList = [
-    kyle,
-    cartman,
-    kenny,
-    stan,
-    butters,
-    heidi,
-    tolkein,
-    amanda,
-    charlotte,
-    ike,
-    mkay,
-    pc,
-    minister,
-    chef,
-    duck,
-    towlie,
-    gopher,
-    mickey,
-    mcnuggets,
-    cat,
-    lemmiwinks
+ 
 ]
 
 /*
@@ -151,24 +124,17 @@ const child = {
     butters,
     heidi,
     tolkein,
-    amanda,
-    charlotte,
     ike
 };
 
 const adults = {
     mkay, //shorthand for mkay: mkay...I already declared mkay at top of file 
     pc,
-    minister,
     chef
 }
 const nonHumans = {
-    duck,
     towlie,
-    gopher,
     mickey,
-    mcnuggets,
-    cat,
     lemmiwinks 
 }
 
